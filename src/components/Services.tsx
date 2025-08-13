@@ -55,6 +55,12 @@ const Services = () => {
       description: 'Limpeza profunda da pele com extração de cravos e hidratação',
       image: '/limpeza-facial.jpg',
       popular: true
+    },
+    {
+      title: 'Protocolo de Emagrecimento',
+      description: 'Tratamento especializado para redução de medidas e modelagem corporal',
+      image: '/protocolo-emagrecimento.jpg',
+      popular: true
     }
   ];
 
