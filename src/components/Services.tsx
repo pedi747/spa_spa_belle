@@ -61,6 +61,12 @@ const Services = () => {
       description: 'Tratamento especializado para redução de medidas e modelagem corporal',
       image: '/protocolo-emagrecimento.jpg',
       popular: true
+    },
+    {
+      title: 'Esfoliação Corporal com Ervas',
+      description: 'Esfoliação natural com ervas selecionadas para renovação e suavidade da pele',
+      image: '/esfoliacao-corporal.jpg',
+      popular: false
     }
   ];
 
