@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Mobile responsivo normal */
+@media (max-width: 768px) {
+  .animate-bounce,
+  .animate-pulse,
+  .animate-ping {
+    animation: none !important;
+  }
+  
+  .transition-all {
+    transition-duration: 0.3s !important;
+  }
+}
+
+/* Botão WhatsApp estável */
+.whatsapp-button {
+  position: fixed !important;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B5E3C;
+  border-radius: 3px;
+}
+
+/* Focus */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #8B5E3C;
+  outline-offset: 2px;
+}
