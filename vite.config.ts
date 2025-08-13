@@ -4,14 +4,31 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: './',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      fs: false,
+      path: false,
+      os: false
+    }
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
   server: {
     host: '0.0.0.0',
     port: 3000,
-    strictPort: true,
-    allowedHosts: ['9f00638b7645.ngrok-free.app']
+    strictPort: true
   },
   preview: {
     host: '0.0.0.0',
