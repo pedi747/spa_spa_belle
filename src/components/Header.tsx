@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+
+const NAV_ITEMS = ['Início', 'Sobre', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'];
+
+const normalizeText = (text: string) => 
+  text.toLowerCase().replace('ç', 'c').replace('ô', 'o');
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,13 +87,15 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-              {['Início', 'Sobre', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item, index) => (
+              {NAV_ITEMS.map((item, index) => {
+              const sectionId = index === 0 ? 'hero' : normalizeText(item);
+              return (
                 <a
                   key={item}
-                  href={`#${index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o')}`}
+                  href={`#${sectionId}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o'));
+                    scrollToSection(sectionId);
                   }}
                   className={`elemento-animado font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded px-2 py-1 ${
                     isScrolled
@@ -121,23 +128,26 @@ const Header = () => {
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } ${isScrolled ? 'bg-white border-t border-gray-200' : 'bg-black/90 backdrop-blur-sm'}`}>
           <nav className="py-2">
-            {['Início', 'Sobre', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item, index) => (
-              <a
-                key={item}
-                href={`#${index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o')}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o'));
-                }}
+            {NAV_ITEMS.map((item, index) => {
+              const sectionId = index === 0 ? 'hero' : normalizeText(item);
+              return (
+                <a
+                  key={item}
+                  href={`#${sectionId}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(sectionId);
+                  }}
                 className={`elemento-animado block w-full text-left px-6 py-3 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-inset ${
                   isScrolled
                     ? 'text-gray-700 hover:bg-amber-50 hover:text-amber-900 focus:ring-amber-600'
                     : 'text-white hover:bg-white/10 hover:text-amber-200 focus:ring-white'
                 }`}
-              >
-                {item}
-              </a>
-            ))}
+                >
+                  {item}
+                </a>
+              );
+            })}
           </nav>
         </div>
       </header>

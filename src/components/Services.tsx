@@ -1,74 +1,76 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Star, ArrowRight } from 'lucide-react';
 
-const Services = () => {
-  // Removido intersection observer para melhor performance
+const services = [
+  {
+    title: 'Hidratação Capilar com Brushing',
+    description: 'Tratamento profundo para cabelos ressecados com finalização brushing',
+    image: '/hidratacao-capilar.jpg',
+    popular: true
+  },
+  {
+    title: 'Manutenção de Acrílico',
+    description: 'Manutenção e reparo de unhas em acrílico com acabamento perfeito',
+    image: '/manutencao-acrilico.jpg',
+    popular: false
+  },
+  {
+    title: 'Manicure com Gelinho',
+    description: 'Manicure completa com aplicação de gel para maior durabilidade',
+    image: '/manicure-gelinho.jpg',
+    popular: true
+  },
+  {
+    title: 'Depilação com Cera',
+    description: 'Depilação profissional com cera quente para pele lisa e macia',
+    image: '/depilacao-cera.jpg',
+    popular: false
+  },
+  {
+    title: 'Pedicure com Gelinho',
+    description: 'Pedicure completa com aplicação de gel nos pés',
+    image: '/pedicure-gelinho.jpg',
+    popular: true
+  },
+  {
+    title: 'Depilação com Linha',
+    description: 'Técnica precisa de depilação com linha para sobrancelhas e rosto',
+    image: '/depilacao-linha.jpg',
+    popular: false
+  },
+  {
+    title: 'Limpeza Facial Profissional',
+    description: 'Limpeza profunda da pele com extração de cravos e hidratação',
+    image: '/limpeza-facial.jpg',
+    popular: true
+  },
+  {
+    title: 'Protocolo de Emagrecimento',
+    description: 'Tratamento especializado para redução de medidas e modelagem corporal',
+    image: '/protocolo-emagrecimento.jpg',
+    popular: true
+  },
+  {
+    title: 'Esfoliação Corporal com Ervas',
+    description: 'Esfoliação natural com ervas selecionadas para renovação e suavidade da pele',
+    image: '/esfoliacao-corporal.jpg',
+    popular: false
+  }
+];
 
+const Services = () => {
   const handleWhatsAppService = (serviceName: string) => {
     const phoneNumber = '244930025350';
     const message = encodeURIComponent(
       `Olá! Gostaria de saber mais sobre o serviço "${serviceName}". Poderia me informar o preço e disponibilidade para agendamento?`
     );
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
+    const newWindow = window.open(whatsappUrl, '_blank');
+    if (!newWindow) {
+      console.error('Popup bloqueado. Tente novamente.');
+    }
   };
 
-  const services = [
-    {
-      title: 'Hidratação Capilar com Brushing',
-      description: 'Tratamento profundo para cabelos ressecados com finalização brushing',
-      image: '/hidratacao-capilar.jpg',
-      popular: true
-    },
-    {
-      title: 'Manutenção de Acrílico',
-      description: 'Manutenção e reparo de unhas em acrílico com acabamento perfeito',
-      image: '/manutencao-acrilico.jpg',
-      popular: false
-    },
-    {
-      title: 'Manicure com Gelinho',
-      description: 'Manicure completa com aplicação de gel para maior durabilidade',
-      image: '/manicure-gelinho.jpg',
-      popular: true
-    },
-    {
-      title: 'Depilação com Cera',
-      description: 'Depilação profissional com cera quente para pele lisa e macia',
-      image: '/depilacao-cera.jpg',
-      popular: false
-    },
-    {
-      title: 'Pedicure com Gelinho',
-      description: 'Pedicure completa com aplicação de gel nos pés',
-      image: '/pedicure-gelinho.jpg',
-      popular: true
-    },
-    {
-      title: 'Depilação com Linha',
-      description: 'Técnica precisa de depilação com linha para sobrancelhas e rosto',
-      image: '/depilacao-linha.jpg',
-      popular: false
-    },
-    {
-      title: 'Limpeza Facial Profissional',
-      description: 'Limpeza profunda da pele com extração de cravos e hidratação',
-      image: '/limpeza-facial.jpg',
-      popular: true
-    },
-    {
-      title: 'Protocolo de Emagrecimento',
-      description: 'Tratamento especializado para redução de medidas e modelagem corporal',
-      image: '/protocolo-emagrecimento.jpg',
-      popular: true
-    },
-    {
-      title: 'Esfoliação Corporal com Ervas',
-      description: 'Esfoliação natural com ervas selecionadas para renovação e suavidade da pele',
-      image: '/esfoliacao-corporal.jpg',
-      popular: false
-    }
-  ];
 
   return (
     <section id="servicos" className="py-20 bg-white">

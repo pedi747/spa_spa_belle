@@ -1,0 +1,28 @@
+{
+  "name": "La Vie Esbella Spa",
+  "address": "Condomínio Pitanga Casa A1, Talatona, Luanda, Angola",
+  "phone": "+244930025350",
+  "website": "https://spa-la-vie-esbella.vercel.app",
+  "category": "Spa",
+  "description": "Melhor spa em Luanda oferecendo tratamentos de beleza, massagens, manicure, pedicure e bem-estar em ambiente luxuoso",
+  "services": [
+    "Hidratação Capilar",
+    "Manicure com Gelinho", 
+    "Pedicure com Gelinho",
+    "Manutenção de Acrílico",
+    "Depilação com Linha",
+    "Depilação com Cera",
+    "Limpeza Facial",
+    "Protocolo de Emagrecimento",
+    "Esfoliação Corporal"
+  ],
+  "hours": {
+    "monday": "08:00-18:00",
+    "tuesday": "08:00-18:00", 
+    "wednesday": "08:00-18:00",
+    "thursday": "08:00-18:00",
+    "friday": "08:00-18:00",
+    "saturday": "08:00-18:00",
+    "sunday": "closed"
+  }
+}

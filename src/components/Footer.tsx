@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
 
   const quickLinks = [
     { name: 'Início', href: '#hero' },
