@@ -71,7 +71,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="serviços" className="py-20 bg-white">
+    <section id="servicos" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

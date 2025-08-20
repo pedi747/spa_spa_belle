@@ -125,7 +125,7 @@ const Contact = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contato" className="py-20 bg-gradient-to-b from-amber-50/30 to-white">
+    <section ref={sectionRef} id="contact" className="py-20 bg-gradient-to-b from-amber-50/30 to-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${

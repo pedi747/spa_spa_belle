@@ -83,9 +83,13 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
               {['Início', 'Sobre', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item, index) => (
-                <button
+                <a
                   key={item}
-                  onClick={() => scrollToSection(index === 0 ? 'hero' : item.toLowerCase())}
+                  href={`#${index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o')}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o'));
+                  }}
                   className={`elemento-animado font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded px-2 py-1 ${
                     isScrolled
                       ? 'text-gray-700 hover:text-amber-900 focus:ring-amber-600'
@@ -93,7 +97,7 @@ const Header = () => {
                   }`}
                 >
                   {item}
-                </button>
+                </a>
               ))}
             </nav>
 
@@ -118,9 +122,13 @@ const Header = () => {
         } ${isScrolled ? 'bg-white border-t border-gray-200' : 'bg-black/90 backdrop-blur-sm'}`}>
           <nav className="py-2">
             {['Início', 'Sobre', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item, index) => (
-              <button
+              <a
                 key={item}
-                onClick={() => scrollToSection(index === 0 ? 'hero' : item.toLowerCase())}
+                href={`#${index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o')}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(index === 0 ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('ô', 'o'));
+                }}
                 className={`elemento-animado block w-full text-left px-6 py-3 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-inset ${
                   isScrolled
                     ? 'text-gray-700 hover:bg-amber-50 hover:text-amber-900 focus:ring-amber-600'
@@ -128,7 +136,7 @@ const Header = () => {
                 }`}
               >
                 {item}
-              </button>
+              </a>
             ))}
           </nav>
         </div>

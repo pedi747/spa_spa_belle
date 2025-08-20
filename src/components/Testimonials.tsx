@@ -149,7 +149,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section ref={sectionRef} id="depoimentos" className="py-20 bg-gradient-to-b from-white to-amber-50/30">
+    <section ref={sectionRef} id="testimonials" className="py-20 bg-gradient-to-b from-white to-amber-50/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${

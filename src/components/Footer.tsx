@@ -6,11 +6,11 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'Início', href: '#hero' },
-    { name: 'Sobre Nós', href: '#sobre' },
-    { name: 'Serviços', href: '#serviços' },
-    { name: 'Galeria', href: '#galeria' },
-    { name: 'Depoimentos', href: '#depoimentos' },
-    { name: 'Contato', href: '#contato' }
+    { name: 'Sobre Nós', href: '#about' },
+    { name: 'Serviços', href: '#servicos' },
+    { name: 'Galeria', href: '#gallery' },
+    { name: 'Depoimentos', href: '#testimonials' },
+    { name: 'Contato', href: '#contact' }
   ];
 
   const services = [
@@ -84,12 +84,16 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
                     className="text-gray-300 hover:text-amber-400 transition-colors duration-300 hover:translate-x-1 transform inline-block"
                   >
                     {link.name}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>

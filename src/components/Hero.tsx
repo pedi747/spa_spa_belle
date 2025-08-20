@@ -51,7 +51,7 @@ const Hero = () => {
             <span className="relative z-10">Fale Conosco</span>
           </button>
           <button
-            onClick={() => document.getElementById('serviços')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
             className="elemento-animado group relative bg-white/20 text-white border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium transition-colors duration-200 hover:bg-white/30 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
           >
             <span className="relative z-10">Nossos Serviços</span>
