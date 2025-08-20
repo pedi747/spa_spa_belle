@@ -105,7 +105,8 @@ const Header = () => {
                 >
                   {item}
                 </a>
-              ))}
+              );
+            })}
             </nav>
 
             {/* Mobile Menu Button */}
