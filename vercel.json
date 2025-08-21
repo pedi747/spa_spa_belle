@@ -1,22 +1,31 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "routes": [
+  "functions": {
+    "app/sitemap.xml": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
     {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=86400"
+        }
+      ]
     },
     {
-      "src": "/robots.txt", 
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/googled38dc4b3c6c2629d.html",
-      "dest": "/googled38dc4b3c6c2629d.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type", 
+          "value": "text/plain"
+        }
+      ]
     }
   ]
 }
