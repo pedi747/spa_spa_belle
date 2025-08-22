@@ -4,8 +4,5 @@
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/:match*", "destination": "/:match*" }
-  ],
-  "staticFiles": {
-    "include": ["favicon.ico", "favicon.png", "robots.txt", "sitemap.xml"]
-  }
+  ]
 }
