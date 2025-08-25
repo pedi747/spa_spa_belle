@@ -1,8 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/favicon.ico", "destination": "/favicon.ico" },
-    { "source": "/:match*", "destination": "/:match*" }
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/maintenance",
+      "statusCode": 503
+    }
   ]
 }
