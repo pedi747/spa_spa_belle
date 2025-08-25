@@ -1,11 +1,25 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api/maintenance",
-      "statusCode": 503
+      "destination": "/maintenance.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/maintenance.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Retry-After",
+          "value": "3600"
+        }
+      ]
     }
   ]
 }
